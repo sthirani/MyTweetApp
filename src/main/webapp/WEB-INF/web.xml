@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+version="3.1">
+  <servlet>
+		<servlet-name>MyTweetProject</servlet-name>
+		<servlet-class>com.tweet.MyTweetProjectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyTweetProject</servlet-name>
+		<url-pattern>/</url-pattern>		
+	</servlet-mapping>	
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>MyTweetProjectServlet</web-resource-name>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<servlet>
+		<servlet-name>TwitterServlet</servlet-name>
+		<servlet-class>com.tweet.TwitterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TwitterServlet</servlet-name>
+		<url-pattern>/twitter</url-pattern>		
+	</servlet-mapping>	
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>TwitterServlet</web-resource-name>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<servlet>
+		<servlet-name>tweetinfo</servlet-name>
+		<servlet-class>com.tweet.tweetinfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tweetinfo</servlet-name>
+		<url-pattern>/tweetinfo</url-pattern>		
+	</servlet-mapping>	
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>tweetinfo</web-resource-name>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<servlet>
+		<servlet-name>toptweets</servlet-name>
+		<servlet-class>com.tweet.toptweets</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toptweets</servlet-name>
+		<url-pattern>/toptweets</url-pattern>		
+	</servlet-mapping>	
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>toptweets</web-resource-name>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+</web-app>
